@@ -22,7 +22,7 @@ import Card from '../UI/Card';
 // Or in this style
 function ExpenseItem(props) {
 
-  // the convention is to use a variable name that describes the value, such as title and then to name the function "set" + "variable name". So in this instance the value is "title " and the function is setTitle
+  // the convention is to use a variable name that describes the value, such as title and then to name the function "set" + "variable name". So in this instance the value is "title " and the function is setTitle. Also using "const" is the convention when deconstructing an array.
   const [title, setTitle] = useState(props.title);
 
   // Naming your function with the "event type" and then the word "Handler" is the convention in react. So in this case the "onClick" type function I created is named clickHandler
