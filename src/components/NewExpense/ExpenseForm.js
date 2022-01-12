@@ -6,7 +6,7 @@ function ExpenseForm(props) {
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
-  // The commented out portion shows how to manage multiple states by making one useState object. But it seems like way more code that just making 3 separate useState calls.
+  // The commented out portion shows how to manage multiple states by making one useState object. But it seems like way more code than just making 3 separate useState calls.
 
   // const [userInput, setUsetInput] = useState({
   //     enteredTitle: '',
