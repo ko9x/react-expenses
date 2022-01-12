@@ -40,12 +40,14 @@ const Expenses = (props) => {
     setSelectedYear(passedInYear);
   };
   
+  // for assignment 3 I think we need to filter the props.items array and find all the items that have a year that matches the selected year from the drop down. then pass that array to the map function on line 48. 
   return (
     <div>
       <Card className="expenses">
         <ExpensesFilter selected={selectedYear} onChangeYear={changeYear} />
         {props.items.map((expense) => (
           <ExpenseItem
+            key={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
