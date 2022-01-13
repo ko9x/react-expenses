@@ -1,8 +1,9 @@
 import { useState } from "react";
-import ExpenseItem from "./ExpenseItem";
-import "./Expenses.css";
-import Card from "../UI/Card";
+
 import ExpensesFilter from "./ExpensesFilter";
+import ExpenseItem from "./ExpenseItem";
+import Card from "../UI/Card";
+import "./Expenses.css";
 
 // You can write the functions in this style
 
@@ -39,13 +40,15 @@ const Expenses = (props) => {
   const changeYear = (passedInYear) => {
     setSelectedYear(passedInYear);
   };
-  
-  // for assignment 3 I think we need to filter the props.items array and find all the items that have a year that matches the selected year from the drop down. then pass that array to the map function on line 48. 
+  const filteredArray = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === selectedYear;
+  });
+
   return (
     <div>
       <Card className="expenses">
         <ExpensesFilter selected={selectedYear} onChangeYear={changeYear} />
-        {props.items.map((expense) => (
+        {filteredArray.map((expense) => (
           <ExpenseItem
             key={expense.id}
             title={expense.title}
